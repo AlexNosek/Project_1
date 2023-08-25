@@ -4,6 +4,8 @@ author: Alexandr Nosek
 email: alexandr.nosek51@gmail.com
 discord: Vintag#
 """
+
+
 from pprint import pprint
 oddelovac = "-" * 40
 registered_users = {
@@ -111,7 +113,18 @@ print(f"The sum of all the numbers {sum(numbers_list)}")
 print(oddelovac)
 print("LEN|  OCCURENCES  |NR.")
 print(oddelovac)
+word_length = {}
+for word in upper_lowercase_words:
+    length = len(word)
+    if length not in word_length:
+        word_length[length] = []
+    word_length[length].append(word)
 
+
+for i in word_length:
+    
+
+print(word_length)
 
     
 
