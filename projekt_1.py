@@ -5,7 +5,7 @@ email: alexandr.nosek51@gmail.com
 discord: Vintag#
 """
 from pprint import pprint
-
+oddelovac = "-" * 40
 registered_users = {
     "bob" : "123", 
     "ann" : "pass123", 
@@ -13,7 +13,7 @@ registered_users = {
     "liz" : "pass123"
     } 
 
-nickname = input("Ahoj, pro pokračování prosím zadej své přihlašovací jméno: ") 
+nickname = input("Hello, please enter your username to continue: ") 
 
 texts = ['''
 Situated about 10 miles west of Kemmerer,
@@ -43,22 +43,25 @@ in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.''']
 
 # ověření hesla
-password = input("Nyní zadej své heslo: ")
+password = input("Enter your password: ")
+print(oddelovac)
 cnt = 0
 while registered_users.get(nickname) != password:
     if cnt == 2:
-        print("Zadáno příliš mnoho pokusů, aplikace se nyní ukončí!")
+        print("Too many incorrect attempts!")
         exit()
     
     else:        
-        password = input("Zadejte heslo znova: ")
+        password = input("Enter your password again: ")
         
     cnt += 1
 else:
     print("Welcome to the app,",nickname,"\nWe have 3 texts to be analyzed.")
+    print(oddelovac)
 
 #ověření vstupu uživatele
 chosen_text = input("Enter a number btw. 1 and 3 to select: ")
+print(oddelovac)
 if not chosen_text.isdigit():
     print("You have entered an unauthorized character, terminating the program..")
     exit()
@@ -78,22 +81,18 @@ for titlecase in titlecase_words:
         titlecase_words_list.append(titlecase)
 print(f"There are {len(titlecase_words_list)} titlecase words.")
 
-#for loop pro počet slov psaných velkým písmem
+#for loop pro počet slov psaných velkým a malým písmem
 
 uppercase_words_list = []
-uppercase_words = texts[int(chosen_text) - 1].split()
-for word in uppercase_words:
+lowercase_words_list = []
+upper_lowercase_words = texts[int(chosen_text) - 1].split()
+
+for word in upper_lowercase_words:
     if all(letter.isupper() for letter in word):
         uppercase_words_list.append(word)
-print(f"There are {len(uppercase_words_list)} uppercase words.")
-
-#for loop pro počet slov psaných malými písmeny
-
-lowercase_words_list = []
-lowercase_words = texts[int(chosen_text) - 1].split()
-for word in lowercase_words:
-    if all(letter.islower() for letter in word):
+    elif all(letter.islower() for letter in word):
         lowercase_words_list.append(word)
+print(f"There are {len(uppercase_words_list)} uppercase words.")
 print(f"There are {len(lowercase_words_list)} lowercase words.")
 
 #for loop pro počet čísel
@@ -104,7 +103,14 @@ for word in numbers:
         word = int(word)
         numbers_list.append(word)
 print(f"There are {len(numbers_list)} numeric strings")
+
+#součet všech čísel
 print(f"The sum of all the numbers {sum(numbers_list)}")
+
+#graf
+print(oddelovac)
+print("LEN|  OCCURENCES  |NR.")
+print(oddelovac)
 
 
     
