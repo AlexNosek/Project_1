@@ -1,0 +1,1 @@
+Dokumentace k prvnímu projektu
