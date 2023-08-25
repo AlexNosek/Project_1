@@ -96,6 +96,20 @@ for word in lowercase_words:
         lowercase_words_list.append(word)
 print(f"There are {len(lowercase_words_list)} lowercase words.")
 
+#for loop pro počet čísel
+numbers_list = []
+numbers = texts[int(chosen_text) - 1].split()
+for word in numbers:
+    if word.isdigit():
+        word = int(word)
+        numbers_list.append(word)
+print(f"There are {len(numbers_list)} numeric strings")
+print(f"The sum of all the numbers {sum(numbers_list)}")
+
+
+    
+
+
 
 
 
