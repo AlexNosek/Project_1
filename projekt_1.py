@@ -15,8 +15,6 @@ registered_users = {
     "liz" : "pass123"
     } 
 
-nickname = input("Hello, please enter your username to continue: ") 
-
 texts = ['''
 Situated about 10 miles west of Kemmerer,
 Fossil Butte is a ruggedly impressive
@@ -43,6 +41,9 @@ represent several varieties of perch, as well as
 other freshwater genera and herring similar to those
 in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.''']
+
+
+nickname = input("Hello, please enter your username to continue: ") 
 
 # ověření hesla
 password = input("Enter your password: ")
