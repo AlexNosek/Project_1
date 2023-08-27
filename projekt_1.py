@@ -2,7 +2,7 @@
 projekt_1.py: první projekt do Engeto Online Python Akademie
 author: Alexandr Nosek
 email: alexandr.nosek51@gmail.com
-discord: Vintag#
+discord: Vintag    // nick: Alex Nosek
 """
 
 
@@ -51,8 +51,7 @@ cnt = 0
 while registered_users.get(nickname) != password:
     if cnt == 2:
         print("Too many incorrect attempts!")
-        exit()
-    
+        exit()    
     else:        
         password = input("Enter your password again: ")
         
@@ -111,7 +110,7 @@ print(f"The sum of all the numbers {sum(numbers_list)}")
 
 #graf
 print(oddelovac)
-print("LEN|  OCCURENCES  |NR.")
+print("LEN|     OCCURENCES     |NR.")
 print(oddelovac)
 word_length = {}
 for word in upper_lowercase_words:
@@ -120,12 +119,9 @@ for word in upper_lowercase_words:
         word_length[length] = []
     word_length[length].append(word)
 
-
-for i in word_length:
-    
-
-print(word_length)
-
+for order, count in sorted(word_length.items()):
+    graph = "*" * len(count)
+    print(f"{order:3d}|{graph:<20s}|{len(count):2d}")
     
 
 
