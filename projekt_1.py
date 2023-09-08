@@ -88,8 +88,9 @@ print(f"There are {len(titlecase_words_list)} titlecase words.")
 uppercase_words_list = []
 lowercase_words_list = []
 upper_lowercase_words = texts[int(chosen_text) - 1].split()
+words_without_commas = [word.strip(",") for word in upper_lowercase_words]
 
-for word in upper_lowercase_words:
+for word in words_without_commas:
     if all(letter.isupper() for letter in word):
         uppercase_words_list.append(word)
     elif all(letter.islower() for letter in word):
@@ -114,7 +115,7 @@ print(oddelovac)
 print("LEN|     OCCURENCES     |NR.")
 print(oddelovac)
 word_length = {}
-for word in upper_lowercase_words:
+for word in words_without_commas:
     length = len(word)
     if length not in word_length:
         word_length[length] = []
@@ -123,29 +124,3 @@ for word in upper_lowercase_words:
 for order, count in sorted(word_length.items()):
     graph = "*" * len(count)
     print(f"{order:3d}|{graph:<20s}|{len(count):2d}")
-    
-
-
-
-
-
-
-
-    
-
-
-
-
-
-        
-
-    
-    
-    
-
-
-    
-
-
-
-
