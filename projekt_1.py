@@ -88,7 +88,7 @@ print(f"There are {len(titlecase_words_list)} titlecase words.")
 uppercase_words_list = []
 lowercase_words_list = []
 upper_lowercase_words = texts[int(chosen_text) - 1].split()
-words_without_commas = [word.strip(",") for word in upper_lowercase_words]
+words_without_commas = [word.strip(",").strip(".") for word in upper_lowercase_words]
 
 for word in words_without_commas:
     if all(letter.isupper() for letter in word):
